@@ -5,7 +5,9 @@
 body {
   @apply m-0 antialiased font-sans;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 code {
   @apply font-mono;
 }

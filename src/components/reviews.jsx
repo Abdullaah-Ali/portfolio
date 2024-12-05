@@ -1,20 +1,10 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-
 const ClientReviews = () => {
   const reviews = [
-    { id: 1, name: "John Doe", text: "Exceptional service! Highly recommend and would work with again.", rating: 5 },
-    { id: 2, name: "Jane Smith", text: "Professional, efficient, and great communication throughout our project.", rating: 4 },
-    { id: 3, name: "Mike Johnson", text: "Incredible attention to detail and outstanding results.", rating: 5 },
-    { id: 4, name: "Sarah Lee", text: "Amazing experience, would definitely work with again!", rating: 4 },
-    { id: 5, name: "David Miller", text: "Great value and professionalism.", rating: 5 },
-    { id: 6, name: "Emily Davis", text: "Wonderful collaboration and excellent results.", rating: 4 },
-    { id: 7, name: "Chris Brown", text: "Excellent quality, very satisfied!", rating: 5 },
-    { id: 8, name: "Jessica Taylor", text: "A fantastic experience, highly recommended!", rating: 4 },
-    { id: 9, name: "Daniel Green", text: "Impressed with the service, would use again.", rating: 5 },
-    { id: 10, name: "Natalie White", text: "Outstanding work and great communication.", rating: 4 },
-    { id: 11, name: "John Black", text: "Very professional and great value for money.", rating: 5 },
-    { id: 12, name: "Emily Clarke", text: "Highly skilled and great experience overall.", rating: 4 },
+    { id: 1, name: "Meto", text: "Exceptional service! Highly recommend and would work with again.", rating: 5 },
+    { id: 2, name: "James", text: "Professional, efficient, and great communication throughout our project.", rating: 5 },
+
   ];
 
   const reviewsPerPage = 3;  // Number of reviews to display at once
@@ -38,7 +28,8 @@ const ClientReviews = () => {
   const selectedReviews = reviews.slice(startIndex, startIndex + reviewsPerPage);
 
   return (
-    <div className="relative max-w-5xl mx-auto mt-12 pb-8"> {/* Added padding-bottom here */}
+<div id="reveiws">
+<div className="relative max-w-5xl mx-auto mt-12 pb-8"> {/* Added padding-bottom here */}
       {/* Navigation Buttons */}
       <button
         onClick={handlePrev}
@@ -78,6 +69,7 @@ const ClientReviews = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
