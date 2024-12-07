@@ -28,7 +28,7 @@ const ClientReviews = () => {
   const selectedReviews = reviews.slice(startIndex, startIndex + reviewsPerPage);
 
   return (
-<div id="reveiws">
+<div id="reveiws" >
 <div className="relative max-w-5xl mx-auto mt-12 pb-8"> {/* Added padding-bottom here */}
       {/* Navigation Buttons */}
       <button

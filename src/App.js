@@ -7,6 +7,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Header from './components/header';
 import Projects from './components/projects';
 import ClientReviews from './components/reviews';
+import Stack from './components/stack';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       </div>
       <Projects />
       <ClientReviews />
+      <Stack />
     </div>
   );
 }
