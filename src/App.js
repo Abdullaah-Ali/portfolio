@@ -8,6 +8,7 @@ import Header from './components/header';
 import Projects from './components/projects';
 import ClientReviews from './components/reviews';
 import Stack from './components/stack';
+import ServicesSection from './components/services'
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
       </div>
+      <ServicesSection />
+
       <Projects />
       <ClientReviews />
       <Stack />
