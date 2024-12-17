@@ -26,7 +26,7 @@ const Header = () => {
         <a href="#projects" className="link">Projects</a>
         <a href="#home3" className="link">Experience</a>
         <a href="#reviews" className="link">Client Reviews</a>
-        <a href="#home5" className="link">Blogs</a>
+        <a href="#blogs" className="link">Blogs</a>
         <a href="#bookacall" className="link">Book A Call</a>
       </nav>
 
@@ -41,7 +41,7 @@ const Header = () => {
         <a href="#projects" className="link">Projects</a>
         <a href="#home3" className="link">Experience</a>
         <a href="#reviews" className="link">Client Reviews</a>
-        <a href="#home5" className="link">Blogs</a>
+        <a href="#blogs" className="link">Blogs</a>
         <a href="#bookacall" className="link">Book A Call</a>
       </div>
     </header>

@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "How to Learn React",
+      "image": "/images/clipit.png",
+      "description": "A guide to mastering React step by step.",
+      "url": "/blog/react-guide"
+    },
+    {
+      "id": 2,
+      "title": "Understanding Tailwind CSS",
+      "image": "/images/clipit.png",
+      "description": "A quick start to building beautiful designs with Tailwind CSS.",
+      "url": "/blog/tailwind-guide"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript Tips & Tricks",
+      "image": "/images/clipit.png",
+      "description": "Boost your JavaScript skills with these tips.",
+      "url": "/blog/js-tips"
+    }
+  ]
+  

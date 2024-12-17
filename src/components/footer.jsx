@@ -7,8 +7,8 @@ import logo from '../assests/logoportfolio.png';
 const Footer = () => {
   return (
     <div className="w-full">
-      <footer className="text-black py-12 text-center w-full bottom-0 left-0 right-0">
-        <div className="container mx-auto px-4">
+<footer className="text-black py-12[2-rem] text-center w-full bottom-0 left-0 right-0 rem">
+<div className="container mx-auto px-4">
 
           {/* Main Content */}
           <div className="flex flex-col items-center justify-center">

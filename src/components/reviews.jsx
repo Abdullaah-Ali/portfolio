@@ -1,24 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const ClientReviews = () => {
   const reviews = [
-    {
-      id: 1,
-      name: "Meto",
-      text: "Exceptional service! Highly recommend and would work with again.",
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: "James",
-      text: "Professional, efficient, and great communication throughout our project.",
-      rating: 5,
-    },
+    { id: 1, name: "Meto", text: "Exceptional service! Highly recommend and would work with again.", rating: 5 },
+    { id: 2, name: "James", text: "Professional, efficient, and great communication throughout our project.", rating: 5 },
+    { id: 3, name: "Alex", text: "The team was fantastic to work with and delivered great results!", rating: 5 },
   ];
 
-  const reviewsPerPage = 3; // Number of reviews to display at once
   const [currentPage, setCurrentPage] = useState(0);
+  const [reviewsPerPage, setReviewsPerPage] = useState(3); // Default for large screens
+
+  // Handle screen resizing
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setReviewsPerPage(1); // 1 review per page on small screens
+      } else if (window.innerWidth < 1024) {
+        setReviewsPerPage(2); // 2 reviews per page on medium screens
+      } else {
+        setReviewsPerPage(2); // 3 reviews per page on large screens
+      }
+    };
+    handleResize(); // Call on mount
+    window.addEventListener("resize", handleResize); // Update on resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Handle Next Button Click
   const handleNext = () => {
@@ -38,24 +46,24 @@ const ClientReviews = () => {
   const selectedReviews = reviews.slice(startIndex, startIndex + reviewsPerPage);
 
   return (
-    <div id="reviews" className="relative max-w-5xl mx-auto mt-12 pb-8">
+    <div id="reviews" className="relative max-w-5xl mx-auto mt-12 pb-8 px-4">
       {/* Carousel */}
-      <div className="flex relative space-x-6 items-center">
+      <div className="flex relative items-center">
         {/* Prev Button */}
         <button
           onClick={handlePrev}
           className="absolute left-4 z-20 p-3 bg-gray-100 rounded-full shadow-md hover:bg-gray-200 transition transform -translate-y-1/2"
-          style={{ top: "50%" }} // Vertically centers the button
+          style={{ top: "50%" }}
         >
           <ChevronLeft className="w-6 h-6 text-gray-600" />
         </button>
 
         {/* Reviews */}
-        <div className="flex overflow-hidden space-x-6 mx-auto">
+        <div className="flex overflow-hidden mx-auto space-x-4">
           {selectedReviews.map((review) => (
             <div
               key={review.id}
-              className="flex-shrink-0 w-80 p-6 bg-white rounded-lg shadow-md border border-gray-200 text-center mx-4 transform transition-transform hover:scale-105 hover:shadow-xl hover:border-blue-500 hover:bg-blue-50"
+              className="flex-shrink-0 w-full sm:w-72 md:w-80 p-6 bg-white rounded-lg shadow-md border border-gray-200 text-center mx-2 transform transition-transform hover:scale-105 hover:shadow-xl hover:border-blue-500 hover:bg-blue-50"
             >
               <Quote className="mx-auto mb-4 text-blue-500 scale-150" />
               <p className="text-lg italic text-gray-600">"{review.text}"</p>
@@ -75,10 +83,12 @@ const ClientReviews = () => {
             </div>
           ))}
         </div>
+
+        {/* Next Button */}
         <button
           onClick={handleNext}
           className="absolute right-4 z-20 p-3 bg-gray-100 rounded-full shadow-md hover:bg-gray-200 transition transform -translate-y-1/2"
-          style={{ top: "50%" }} // Vertically centers the button
+          style={{ top: "50%" }}
         >
           <ChevronRight className="w-6 h-6 text-gray-600" />
         </button>
