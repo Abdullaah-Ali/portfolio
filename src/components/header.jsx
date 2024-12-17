@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './header.css'; // Make sure you import the CSS file
+import logo from '../assests/logoportfolio.png'
 
 const Header = () => {
   // State to control the dropdown visibility
@@ -11,12 +12,20 @@ const Header = () => {
   };
 
   return (
+
+     
     <header className="header">
+      
+      <div id="logogo" className="logogo">
+  <img src={logo} alt="Syed Abdullah" className="headerimagelogo" />
+</div>
+
+
       <nav className="nav">
         <a href="#home1" className="link">Services</a>
         <a href="#projects" className="link">Projects</a>
         <a href="#home3" className="link">Experience</a>
-        <a href="#reveiws" className="link">Client Reviews</a>
+        <a href="#reviews" className="link">Client Reviews</a>
         <a href="#home5" className="link">Blogs</a>
         <a href="#home3" className="link">Book A Call</a>
       </nav>
@@ -31,7 +40,7 @@ const Header = () => {
         <a href="#home1" className="link">Services</a>
         <a href="#home2" className="link">Projects</a>
         <a href="#home3" className="link">Experience</a>
-        <a href="#reveiws" className="link">Client Reviews</a>
+        <a href="#reviews" className="link">Client Reviews</a>
         <a href="#home5" className="link">Blogs</a>
         <a href="#home3" className="link">Book A Call</a>
       </div>

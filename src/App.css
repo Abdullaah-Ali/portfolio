@@ -17,6 +17,23 @@
   margin-top: 20px;
 }
 
+.imagelogo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #333;
+  margin-top: 20px;
+}
+.headerimagelogo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  margin-top: 20px;
+}
+
+
+
 .header {
   margin: -7px 0;
 }

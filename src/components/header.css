@@ -51,6 +51,12 @@
     display: flex;
   }
   
+  .logogo{
+    position: absolute;
+    left: -450px;
+    margin-top: -16px;
+
+  }
   /* Media Queries for mobile responsiveness */
   @media (max-width: 768px) {
     .nav {
@@ -61,4 +67,6 @@
       display: block; /* Show hamburger icon on mobile */
     }
   }
+  
+
   

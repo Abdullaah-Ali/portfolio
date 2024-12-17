@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import syed from './assests/syed.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,19 +9,35 @@ import Projects from './components/projects';
 import ClientReviews from './components/reviews';
 import Stack from './components/stack';
 import ServicesSection from './components/services'
+import Footer from './components/footer';
 
 function App() {
+  useEffect(() => {
+    // Dynamically load Calendly script
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
   
   return (
     <div className="App">
       <Header />
-      <h1 className="header">Syed Abdullah - Full Stack Developer</h1>
+      <h1 className="header">Hi Syed Abdullah here, Helping Companies Scale
+      </h1>
       <img src={syed} alt="Syed Abdullah" className="image" />
-      <h2 className="subtitle">Helping Companies Scale</h2>
+
+
       <p className="description">
-        I'm Syed Abdullah Ali, a full-stack MERN developer passionate about building innovative digital products.<br />
-        I’ve worked with teams across various industries to turn ideas into market-ready web applications.
-      </p>
+       <span>Howdy!</span>
+       <br></br>
+       It's Syed Abdullah, Web Developer and aspiring Machine Learning Engineer, aspiring to learn new skills  in the digital age. 
+       I have worked with many Several clients in growing their businesses and am always ready to work for you. Working in different environments using different practices fuels my passion, still thriving to face challenges and grow.       </p>
       <div className="icon">
         <a href="https://github.com/Abdullaah-Ali" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} />
@@ -37,8 +53,29 @@ function App() {
 
       <Projects />
       <ClientReviews />
+      
       <Stack />
+      <div id = 'info'className='text-2xl font-bold'>
+          <p>Lets discuss your project details </p>
+
+      </div>
+
+  
+      <div 
+
+        className="calendly-inline-widget" 
+        data-url="https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1" 
+        style={{
+          minWidth: '500px', 
+          height: '600px',
+          marginTop : '34px'
+        }}
+      />
+    <Footer />
+ 
     </div>
+
+
   );
 }
 
