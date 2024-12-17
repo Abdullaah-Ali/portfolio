@@ -3,7 +3,7 @@ import { Code, Palette, Brain } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description, languages }) => {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-2 border border-gray-200 w-full">
+    <div id="services" className="bg-white rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-2 border border-gray-200 w-full">
       <div className="flex flex-col items-center text-center">
         {/* Icon Container */}
         <div className="mb-4 p-4 rounded-full bg-blue-100 text-blue-600">
