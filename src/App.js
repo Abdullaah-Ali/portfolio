@@ -64,17 +64,14 @@ function App() {
         <p>Let's discuss your project details</p>
       </div>
 
-      <div className="calendly-container">
-        <div
-          id="bookacall"
-          className="calendly-inline-widget"
-          data-url="https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1"
-          style={{
-            width: "100%",
-            height: "600px",
-          }}
-        />
-      </div>
+<div className="calendly-container">
+  <div
+    id="bookacall"
+    className="calendly-inline-widget"
+    data-url="https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1"
+   
+  />
+</div>
 
       <Footer />
     </div>

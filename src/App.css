@@ -47,19 +47,21 @@ body {
 .blogs-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items at the top for better layout */
+  align-items: flex-start;
   min-height: 100vh;
   padding: 2rem 1rem;
   overflow-x: hidden;
-  flex-wrap: wrap; /* Allow cards to wrap to next line */
-  gap: 1.5rem; /* Space between blog cards */
-  margin: 0 auto; /* Ensure container is centered */
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, #E8F4FF, #FFFFFF);
+  color: #333333;
 }
 
 /* Wrapper for the slider */
 .slider-wrapper {
   width: 100%;
-  max-width: 700px; /* Slightly larger for medium screens */
+  max-width: 700px;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
@@ -84,8 +86,8 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
-  max-width: 400px; /* Larger width for more emphasis */
-  height: 450px; /* Taller height to give more space for content */
+  max-width: 400px;
+  height: 450px;
   margin: 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -99,7 +101,7 @@ body {
 /* Blog image */
 .blog-image img {
   width: 100%;
-  height: 250px; /* Larger image height */
+  height: 250px;
   object-fit: cover;
 }
 
@@ -130,7 +132,7 @@ body {
 
 .slick-track {
   display: flex;
-  align-items: center; /* Vertically center slides */
+  align-items: center;
 }
 
 .slick-slide {
@@ -150,7 +152,7 @@ body {
 }
 
 .slick-dots li.slick-active button:before {
-  color: #333; /* Highlight active dot */
+  color: #333;
 }
 
 .slick-prev,
@@ -161,7 +163,7 @@ body {
 
 .slick-prev:before,
 .slick-next:before {
-  color: #333; /* Arrows color */
+  color: #333;
 }
 
 /* Responsive adjustments for mobile devices */
@@ -172,83 +174,88 @@ body {
   }
 
   .blogs-container {
-    padding: 1rem; /* Add some padding for mobile */
-    flex-direction: column; /* Stack blog cards vertically on smaller screens */
-    align-items: center; /* Center the items */
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .blog-card {
-    max-width: 320px; /* Reduce width slightly */
-    height: auto; /* Auto height to allow flexible content */
+    max-width: 320px;
+    height: auto;
   }
 
   .blog-title {
-    font-size: 1.2rem; /* Slightly smaller font */
+    font-size: 1.2rem;
   }
 
   .blog-description {
-    font-size: 0.9rem; /* Adjust description font size */
+    font-size: 0.9rem;
   }
 }
 
-/* Additional responsive adjustments for smaller screens */
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.6rem; /* Reduce section title size */
-    text-align: center; /* Center align title */
+    font-size: 1.6rem;
+    text-align: center;
   }
 
   .blog-card {
-    max-width: 100%; /* Make cards take full width */
-    height: auto; /* Allow card height to adjust dynamically */
+    max-width: 100%;
+    height: auto;
   }
 
   .blog-image img {
-    height: 180px; /* Reduce image height */
+    height: 180px;
   }
 
   .blog-title {
-    font-size: 1.1rem; /* Slightly smaller title font size */
+    font-size: 1.1rem;
   }
 
   .blog-description {
-    font-size: 0.85rem; /* Reduce description font size for mobile */
+    font-size: 0.85rem;
   }
 }
 
-.rem{
-  padding: 2rem;
-}
-/* Parent container to center the Calendly widget */
+/* Wrapper for the slider */
+
 .calendly-container {
   display: flex;
   justify-content: center;
+  align-items: center; /* Ensure content is centered */
   margin: 0 auto;
-  width: 100%; /* Ensures the container uses full width */
-  max-width: 1200px; /* Limit container width */
-  padding: 0 1rem; /* Add padding for smaller screens */
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  overflow: hidden; /* Prevent any scrollbar */
 }
 
-/* Calendly widget styles */
+/* Ensure widget takes up full width and proper height */
 .calendly-inline-widget {
-  width: 100%; /* Make the widget take up 100% of the container */
-  height: 60vh; /* Set the height as a percentage of the viewport height */
+  width: 100%;
+  height: 75vh; /* Set an appropriate height */
   border: none;
+  overflow: hidden; /* Ensure no internal scroll */
 }
 
 /* Responsive height adjustments */
+@media (max-width: 1024px) {
+  .calendly-inline-widget {
+    height: 65vh;
+  }
+}
+
 @media (max-width: 768px) {
   .calendly-inline-widget {
-    height: 50vh; /* Adjust height for tablets */
+    height: 55vh;
   }
 }
 
 @media (max-width: 480px) {
   .calendly-inline-widget {
-    height: 45vh; /* Reduce height further on smaller devices */
+    height: 50vh;
   }
 }
-
 
 * {
   box-sizing: border-box;
