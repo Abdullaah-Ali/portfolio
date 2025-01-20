@@ -6,7 +6,7 @@ const Projects = () => {
 
   return (
     <div id =  "projects">
-      <h1 className="text-3xl font-bold text-center mb-8">My Projects</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 m-5 font-inter">Professional Experience</h1>
       <div className="container mx-auto grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
         {projects.map((project, index) => (
           <div
@@ -21,8 +21,8 @@ const Projects = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <h2 className="text-xl">{project.title}</h2>
-            <p className="text-gray-600 mb-4">{project.bodyText}</p>
+            <h2 className="text-xl font-inter">{project.title}</h2>
+            <p className="text-gray-600 mb-4 font-roboto m-7px">{project.bodyText}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tags.map((tag, idx) => (
                 <span key={idx} className="bg-blue-100 text-blue-500 px-2 py-1 rounded-full text-sm">

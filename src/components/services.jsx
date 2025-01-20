@@ -10,16 +10,16 @@ const ServiceCard = ({ icon: Icon, title, description, languages }) => {
           <Icon size={40} strokeWidth={1.5} />
         </div>
         {/* Title */}
-        <h3 className="text-2xl font-bold text-gray-800 mb-2 font-montserrat">
+        <h3 className="text-2xl font-bold text-gray-800 mb-2 font-inter">
           {title}
         </h3>
         {/* Description */}
-        <p className="text-gray-700 text-sm leading-relaxed font-quicksand">
+        <p className="text-gray-700 text-sm leading-relaxed font-roboto">
           {description}
         </p>
         {/* Languages */}
-        <div className="mt-4 text-gray-600 text-sm font-open-sans">
-          <span className="font-bold">Languages:</span> {languages.join(', ')}
+        <div className="mt-4 text-gray-600 text-sm font-roboto">
+        <span className="font-inter font-bold">Languages:</span> {languages.join(', ')}
         </div>
       </div>
     </div>
@@ -52,22 +52,27 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="bg-[#F2F5F9] py-16">
-      <div className="container mx-auto px-4">
-        {/* Cards Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              languages={service.languages}
-            />
-          ))}
-        </div>
+    <section
+    className="py-16"
+    style={{
+      background: "linear-gradient(135deg, #f2f5f9 0%, #dce1e8 100%)",
+    }}
+  >
+    <div className="container mx-auto px-4">
+      {/* Cards Row */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {services.map((service, index) => (
+          <ServiceCard
+            key={index}
+            icon={service.icon}
+            title={service.title}
+            description={service.description}
+            languages={service.languages}
+          />
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

@@ -13,8 +13,8 @@ import git from '../assests/git.png'
 const Stack = () => {
   return (
     <div className="stack">
-      <h1 className="text-center text-2xl font-bold">Tech Stack I Work With</h1>
-      <p className="text-center mt-2">
+      <h1 className="text-center text-2xl font-bold font-inter">Tech Stack I Work With</h1>
+      <p className="text-center mt-2 font-roboto">
         A compilation of the programming languages, tools, and technologies that shape my professional toolkit.
       </p>
       <div className="flex flex-col mt-4 w-full gap-y-6 px-4">

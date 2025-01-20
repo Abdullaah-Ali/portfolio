@@ -19,7 +19,7 @@ const Blogs = () => {
 
   return (
     <div id="blogs" className="flex flex-col items-center w-full px-4 sm:px-6 md:px-8 py-12 bg-gradient-to-b from-[#E8F4FF] to-white text-[#333]">
-      <h2 className="text-2xl mb-6 font-bold text-center">Latest Blogs</h2>
+      <h2 className="text-2xl mb-6 font-bold text-center font-inter">Latest Blogs</h2>
 
       <div className="w-full max-w-lg mx-auto">
         <Slider {...settings}>
@@ -32,8 +32,8 @@ const Blogs = () => {
 
               {/* Blog Content */}
               <div className="p-4 text-center">
-                <h3 className="text-lg sm:text-xl font-bold mb-2">{blog.title}</h3>
-                <p className="text-sm sm:text-base text-gray-600">{blog.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 font-inter">{blog.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 font-roboto">{blog.description}</p>
               </div>
             </div>
           ))}

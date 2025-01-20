@@ -3,7 +3,7 @@
         {
             "image" : "/images/blog.jpg",
             "title": "Developer - Blogging Website",
-            "bodyText": "blogging website features JWT-based authentication (login, signup, logout), blog management with pagination, and user profile functionality. It incorporates AI for spell checking, content summarization, and a custom chatbot. SEO is enhanced using NLP for auto-generating tags and recommendations.",
+            "bodyText": "Blogging website features JWT-based authentication (login, signup, logout), blog management with pagination, and user profile functionality. It incorporates AI for spell checking, content summarization, and a custom chatbot. SEO is enhanced using NLP for auto-generating tags and recommendations.",
             "links": [
                 {
                     "text": "GitHub",
