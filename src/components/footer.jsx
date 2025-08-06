@@ -36,30 +36,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Services Section */}
-          <div className="text-center md:text-left">
-            <h4 className="font-bold text-xl text-white mb-6">Services</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#services" className="text-gray-400 hover:text-green-500 transition-colors duration-300 flex items-center justify-center md:justify-start gap-2">
-                  <FontAwesomeIcon icon={faCode} className="text-sm" />
-                  MERN Stack Development
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-400 hover:text-green-500 transition-colors duration-300 flex items-center justify-center md:justify-start gap-2">
-                  <FontAwesomeIcon icon={faCode} className="text-sm" />
-                  Design to Code
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="text-gray-400 hover:text-green-500 transition-colors duration-300 flex items-center justify-center md:justify-start gap-2">
-                  <FontAwesomeIcon icon={faCode} className="text-sm" />
-                  Full-Stack Solutions
-                </a>
-              </li>
-            </ul>
-          </div>
+       
 
           {/* Contact Section */}
           <div className="text-center md:text-left">
@@ -113,44 +90,18 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            
-            {/* Copyright */}
-            <div className="text-gray-500 text-center md:text-left mb-4 md:mb-0">
-              <p className="flex items-center justify-center md:justify-start gap-2">
-                © 2024 Syed Abdullah. Built with 
-                <FontAwesomeIcon icon={faHeart} className="text-red-500 text-sm" />
-                and lots of caffeine.
-              </p>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="flex items-center gap-6 text-sm text-gray-500">
-              <div className="text-center">
-                <div className="text-green-500 font-bold" style={{ color: 'var(--accent-primary)' }}>15+</div>
-                <div>Projects</div>
-              </div>
-              <div className="w-px h-8 bg-gray-800"></div>
-              <div className="text-center">
-                <div className="text-green-500 font-bold" style={{ color: 'var(--accent-primary)' }}>$500K+</div>
-                <div>Generated</div>
-              </div>
-              <div className="w-px h-8 bg-gray-800"></div>
-              <div className="text-center">
-                <div className="text-green-500 font-bold" style={{ color: 'var(--accent-primary)' }}>99%</div>
-                <div>Satisfaction</div>
-              </div>
+        {/* Copyright Section */}
+        <div className="border-t border-gray-800 pt-8 text-center">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <p className="text-gray-400 mb-4 md:mb-0">
+              © 2025 Syed Abdullah. All rights reserved.
+            </p>
+            <div className="flex items-center gap-2 text-gray-400">
+              <span>Built with</span>
+              <FontAwesomeIcon icon={faHeart} className="text-red-500 text-sm" />
+              
             </div>
           </div>
-        </div>
-
-        {/* Tagline */}
-        <div className="text-center mt-8">
-          <p className="text-2xl md:text-3xl font-bold text-gray-600">
-            Developing solutions that <span className="text-green-500" style={{ color: 'var(--accent-primary)' }}>matter</span>.
-          </p>
         </div>
       </div>
     </footer>

@@ -9,7 +9,6 @@ import ClientReviews from "./components/reviews";
 import Stack from "./components/stack";
 import ServicesSection from "./components/services";
 import Footer from "./components/footer";
-import ProjectCTA from "./components/projectcta";
 
 // Animated Counter Component
 const AnimatedCounter = ({ target, suffix = "", duration = 2000 }) => {
@@ -68,13 +67,48 @@ const ScrollProgress = () => {
 
 function App() {
   useEffect(() => {
+    // Clear any existing Calendly instances
+    const existingCalendlyElements = document.querySelectorAll('.calendly-inline-widget iframe');
+    existingCalendlyElements.forEach(element => element.remove());
+
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = false;
+    script.async = true;
+    script.onload = () => {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const calendlyElement = document.getElementById('bookacall');
+        if (calendlyElement && window.Calendly) {
+          // Clear any existing content
+          calendlyElement.innerHTML = '';
+          
+          // Initialize Calendly widget
+          window.Calendly.initInlineWidget({
+            url: 'https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=00ff41',
+            parentElement: calendlyElement,
+            prefill: {},
+            utm: {}
+          });
+
+          // Force iframe to take full width after initialization
+          setTimeout(() => {
+            const iframe = calendlyElement.querySelector('iframe');
+            if (iframe) {
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.minWidth = '100%';
+              iframe.style.border = 'none';
+            }
+          }, 500);
+        }
+      }, 100);
+    };
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -84,7 +118,7 @@ function App() {
       <Header />
       
       {/* REVOLUTIONARY HERO SECTION */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-32 md:pt-20 lg:pt-28">
         {/* Background Effects */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-20 w-32 h-32 bg-green-500 rounded-full blur-3xl"></div>
@@ -199,21 +233,30 @@ function App() {
       <ClientReviews />
       <Stack />
 
-      <div id="info" className="text-center my-16 px-4">
+    <div id="info" className="text-center my-16 px-4">
         <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
           Ready to <span className="text-green-500" style={{ color: 'var(--accent-primary)' }}>Scale Your Business?</span>
         </h2>
-        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-          Let's discuss how I can help you build the digital product your business needs to thrive in 2024.
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+          Let's discuss how I can help you build the digital product your business needs to thrive in 2025.
         </p>
       </div>
 
-      <div className="flex justify-center items-center mx-auto w-full max-w-5xl px-4 bg-black">
-        <div
-          id="bookacall"
-          className="calendly-inline-widget w-full h-96 border-none overflow-hidden rounded-lg border border-gray-800"
-          data-url="https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1"
-        ></div>
+      <div className="flex justify-center items-center mx-auto w-full max-w-6xl px-4 mb-16">
+        <div className="w-full bg-gray-900 bg-opacity-50 rounded-2xl border border-gray-800 p-2 shadow-2xl">
+          <div
+            id="bookacall"
+            className="calendly-inline-widget w-full rounded-xl"
+            style={{ 
+              height: '700px',
+              width: '100%',
+              minWidth: '100%',
+              border: 'none',
+              overflow: 'hidden',
+              position: 'relative'
+            }}
+          ></div>
+        </div>
       </div>
 
       <Footer />
