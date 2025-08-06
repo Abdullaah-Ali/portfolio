@@ -67,47 +67,14 @@ const ScrollProgress = () => {
 
 function App() {
   useEffect(() => {
-    // Clear any existing Calendly instances
-    const existingCalendlyElements = document.querySelectorAll('.calendly-inline-widget iframe');
-    existingCalendlyElements.forEach(element => element.remove());
-
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
-    script.onload = () => {
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
-        const calendlyElement = document.getElementById('bookacall');
-        if (calendlyElement && window.Calendly) {
-          // Clear any existing content
-          calendlyElement.innerHTML = '';
-          
-          // Initialize Calendly widget
-          window.Calendly.initInlineWidget({
-            url: 'https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=00ff41',
-            parentElement: calendlyElement,
-            prefill: {},
-            utm: {}
-          });
-
-          // Force iframe to take full width after initialization
-          setTimeout(() => {
-            const iframe = calendlyElement.querySelector('iframe');
-            if (iframe) {
-              iframe.style.width = '100%';
-              iframe.style.height = '100%';
-              iframe.style.minWidth = '100%';
-              iframe.style.border = 'none';
-            }
-          }, 500);
-        }
-      }, 100);
-    };
-    document.body.appendChild(script);
+    document.head.appendChild(script);
 
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
       }
     };
   }, []);
@@ -245,15 +212,12 @@ function App() {
       <div className="flex justify-center items-center mx-auto w-full max-w-6xl px-4 mb-16">
         <div className="w-full bg-gray-900 bg-opacity-50 rounded-2xl border border-gray-800 p-2 shadow-2xl">
           <div
-            id="bookacall"
-            className="calendly-inline-widget w-full rounded-xl"
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/abdullahaliquadri?hide_gdpr_banner=1&background_color=111111&text_color=ffffff&primary_color=00ff41"
             style={{ 
+              minWidth: '320px',
               height: '700px',
-              width: '100%',
-              minWidth: '100%',
-              border: 'none',
-              overflow: 'hidden',
-              position: 'relative'
+              width: '100%'
             }}
           ></div>
         </div>
